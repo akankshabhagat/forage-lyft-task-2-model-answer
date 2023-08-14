@@ -58,13 +58,13 @@ class TestBattery(unittest.TestCase):
 
     def test_Spindler_should_be_Service(self):
         current_date=date.fromisoformat("2004-01-30")
-        last_service_date=date.fromisoformat("2002-01-30")
+        last_service_date=date.fromisoformat("2003-01-30")
         battery=SpindlerBattery(current_date,last_service_date)
         self.assertTrue(battery.needs_service())
         
     def test_Spindler_should_notbe_Service(self):
         current_date=date.fromisoformat("2004-01-30")
-        last_service_date=date.fromisoformat("2003-01-30")
+        last_service_date=date.fromisoformat("2002-01-30")
         battery=SpindlerBattery(current_date,last_service_date)
         self.assertFalse(battery.needs_service())
 
